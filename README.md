@@ -13,28 +13,29 @@ Set Class as SSExpandableTableView in place of UITableView class storyboard.See 
 Don't Set UITableView default Delegate and DataSource.See fig3.
 Set SSExpandableTableViewDelegate in ViewController.
 
-#Set Number of parents
+
+Set Number of parents
 - (NSInteger)numberOfParentCellsInTable:(SSExpandableTableView *)tablview;
 
-#Set Number of Childs with respect to parents
+Set Number of Childs with respect to parents
 - (NSInteger)numberOfChildCellsInParent:(NSInteger)parent InTable:(SSExpandableTableView *)tablview;
 
-#Set Height of Parent Rows
+Set Height of Parent Rows
 - (CGFloat)heightForParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview;
 
-#Set Height of Child Rows
+Set Height of Child Rows
 - (CGFloat)heightForChildAtIndex:(NSInteger)child InParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview;
 
-#Give Cells for Parent Cells
+Give Cells for Parent Cells
 - (UITableViewCell *)parentCellForParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview;
 
-#Give Cells for Child Cells
+Give Cells for Child Cells
 - (UITableViewCell *)childCellForChildAtIndex:(NSInteger)child ForParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview;
 
 
-#Set this Methods as per convenience 
+#Set these Methods as per convenience 
 
-#Use this Method to receive action when touched on parent and childs
+Use this Delegate method to receive call when touched on parent and childs
 - (void)didSelectChildAtIndex:(NSInteger)child OfParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview
 {
     NSLog(@"Parent %lu Child %lu",(unsigned long)parent,(unsigned long)child);
