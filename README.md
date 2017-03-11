@@ -2,14 +2,16 @@
 An customisable Expandable Tableview.
 
 SSExpandableTableView is subclass extended from UITableView. It is created as Parent-Child  relationship in Table. 
-User can use any designed UITableViewCell for parent as well as for child or any subclass of the same.
+User can use any designed UITableViewCell for parent as well as for child or any subclass of the same. 
+Set seperate row animation for Collapse and Expand in SSExpandableTableView.
 
-Usage:-
+#Usage:-
 Drag and Drop SSExpandableTableView.h and .m in xcode project.
 Import SSExpandableTableView.h in ViewController where you want to use TableView.
 Import SSExpandableTableViewDelegate in Interface.
-Set Class as SSExpandableTableView in place of UITableView class storyboard.See Screenshot fig2.
-Set SSExpandableTableViewDelegate.
+Set Class as SSExpandableTableView in place of UITableView class storyboard.See fig2.
+Don't Set UITableView default Delegate and DataSource.See fig3.
+Set SSExpandableTableViewDelegate in ViewController.
 
 Set Number of parents
 - (NSInteger)numberOfParentCellsInTable:(SSExpandableTableView *)tablview;
