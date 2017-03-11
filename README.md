@@ -12,46 +12,27 @@ Set Class as SSExpandableTableView in place of UITableView class storyboard.See 
 Set SSExpandableTableViewDelegate.
 
 Set Number of parents
-- (NSInteger)numberOfParentCellsInTable:(SSExpandableTableView *)tablview
-{
-    return 2;
-}
+- (NSInteger)numberOfParentCellsInTable:(SSExpandableTableView *)tablview;
 
 Set Number of Childs with respect to parents
-- (NSInteger)numberOfChildCellsInParent:(NSInteger)parent InTable:(SSExpandableTableView *)tablview
-{
-    return 3;
-}
+- (NSInteger)numberOfChildCellsInParent:(NSInteger)parent InTable:(SSExpandableTableView *)tablview;
 
 Set Height of Parent Rows
-- (CGFloat)heightForParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview
-{
-    return 50.0f;
-}
+- (CGFloat)heightForParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview;
 
 Set Height of Child Rows
-- (CGFloat)heightForChildAtIndex:(NSInteger)child InParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview
-{
-    return 40.0f;
-}
+- (CGFloat)heightForChildAtIndex:(NSInteger)child InParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview;
 
 Give Cells for Parent Cells
-- (UITableViewCell *)parentCellForParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview
-{
-    UITableViewCell *cell = [ tablview dequeueReusableCellWithIdentifier:@"ParentCell" ];
-    return cell;
-}
+- (UITableViewCell *)parentCellForParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview;
 
 Give Cells for Child Cells
-- (UITableViewCell *)childCellForChildAtIndex:(NSInteger)child ForParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview
-{
-    UITableViewCell *cell = [ tablview dequeueReusableCellWithIdentifier:@"ChildCell" ];
-    return cell;
-}
+- (UITableViewCell *)childCellForChildAtIndex:(NSInteger)child ForParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview;
+
 
 Set this Methods as per convenience 
 
-Use this Method to receive tap action on parent and childs
+Use this Method to receive action when touched on parent and childs
 - (void)didSelectChildAtIndex:(NSInteger)child OfParentAtIndex:(NSInteger)parent InTable:(SSExpandableTableView *)tablview
 {
     NSLog(@"Parent %lu Child %lu",(unsigned long)parent,(unsigned long)child);
